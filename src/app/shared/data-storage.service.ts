@@ -12,7 +12,7 @@ export class DataStorageService {
     private http: HttpClient,
     private recipeService: RecipeService,
     private authService: AuthService
-  ) {}
+  ) { }
 
   storerecipes() {
     const recipes = this.recipeService.getRecipes();

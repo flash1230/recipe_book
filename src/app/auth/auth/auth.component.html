@@ -5,8 +5,8 @@
                 {{error}}
             </p>
         </div> -->
-        <app-alert [message]="error" *ngIf = "error" (close) = "onHandleerror()"></app-alert>
-        <div *ngIf = "isLoading">
+        <app-alert [message]="error" *ngIf="error" (close)="onHandleerror()"></app-alert>
+        <div *ngIf="isLoading">
             <app-loading-spinner></app-loading-spinner>
         </div>
         <form #authform="ngForm" (ngSubmit)="onSubmit(authform)" *ngIf="!isLoading">
@@ -16,14 +16,16 @@
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" ngModel required class="form-control" name="password" minlength="6" id="password">
+                <input type="password" ngModel required class="form-control" name="password" minlength="6"
+                    id="password">
             </div>
             <div>
-                <button class="btn btn-primary" type="submit" [disabled]="!authform.valid"> {{isLoginMode ? 'Login' : 'Sign Up' }}</button>
-            |
-                <button class="btn btn-primary" (click)="onswitchmode()" type="button">Switch to {{ isLoginMode ? 'Sign Up' : 'Log In'}}</button>
+                <button class="btn btn-primary" type="submit" [disabled]="!authform.valid"> {{isLoginMode ? 'Login' :
+                    'Sign Up' }}</button>
+                |
+                <button class="btn btn-primary" (click)="onswitchmode()" type="button">Switch to {{ isLoginMode ? 'Sign
+                    Up' : 'Log In'}}</button>
             </div>
         </form>
     </div>
 </div>
-
