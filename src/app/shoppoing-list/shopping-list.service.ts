@@ -12,7 +12,7 @@ export class ShoppingListService{
       ];
 
       getIngridients(){
-          return this.ingridients.slice(); // what does slice do?
+          return this.ingridients.slice();
       }
 
       getIngridient(index: number){
